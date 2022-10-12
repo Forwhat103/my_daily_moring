@@ -12,7 +12,7 @@ weekStr="星期一星期二星期三星期四星期五星期六星期日"
 pos=(today.isoweekday()-1)*3
 week_day = weekStr[pos:pos+3]
 
-today1 = datetime.datetime.strftime(today,'%Y年%m月%d日')
+today1 = datetime.strftime(today,'%Y年%m月%d日')
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
