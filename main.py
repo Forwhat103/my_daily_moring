@@ -109,7 +109,7 @@ data = {"date":{"value":today1},
         "highest":{"value":highest},
         "love_days":{"value":get_count()},
         "birthday_left":{"value":get_birthday()},
-        "words":{"value":get_words(), "color":get_random_color()}}
+        "words":{"value":get_words()}}
 
 #        "week_day_icon":{"value":emoji.emojize(':calendar:')},
 #        "city_icon":{"value":emoji.emojize(':city_sunset:')},
