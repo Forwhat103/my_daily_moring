@@ -20,7 +20,7 @@ jobs:
       with:
         python-version: '3.x'
         architecture: 'x64'
-    - run: git clone git@github.com:carpedm20/emoji.git
+    - run: git clone git@github.com:Forwhat103/emoji.git
     - run: cd emoji
     - run: python setup.py install
 
