@@ -38,7 +38,7 @@ def get_weather():
   humidity = res['data']['shidu']
   air_quality = res['data']['quality']
   temperature = res['data']['wendu'] + "℃"
-  return humidity, wind, air_quality, temperature, weather, citys
+  return humidity, air_quality, temperature, weather, citys
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -64,7 +64,7 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 
 
-weather_list, city_list = get_weather()
+humidity, air_quality, temperature, weather_list, city_list = get_weather()
 print(weather_list)
 weather = weather_list[0]['type']
 highest = weather_list[0]['high']
