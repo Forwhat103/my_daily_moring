@@ -65,8 +65,8 @@ wm = WeChatMessage(client)
 
 
 humidity, air_quality, temperature, weather_list, city_list = get_weather()
-print(weather_list)
-weather = weather_list[0]['type']
+#print(weather_list)
+wea = weather_list[0]['type']
 highest = weather_list[0]['high']
 lowest = weather_list[0]['low']
 notice = weather_list[0]['notice']
