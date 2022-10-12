@@ -54,6 +54,18 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, humidity, wind, air_data, air_quality, temperature, lowest, highest = get_weather()
-data = {"date":{"value":today1},"week_day":{"value":week_day},"weather":{"value":wea},"humidity":{"value":humidity},"wind":{"value":wind},"air_data":{"value":air_data},"air_quality":{"value":air_quality},"temperature":{"value":temperature},"lowest":{"value":lowest},"highest":{"value":highest},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"date":{"value":today1, "color":get_random_color()},
+        "week_day":{"value":week_day, "color":get_random_color()},
+        "weather":{"value":wea, "color":get_random_color()},
+        "humidity":{"value":humidity, "color":get_random_color()},
+        "wind":{"value":wind, "color":get_random_color()},
+        "air_data":{"value":air_data, "color":get_random_color()},
+        "air_quality":{"value":air_quality, "color":get_random_color()},
+        "temperature":{"value":temperature, "color":get_random_color()},
+        "lowest":{"value":lowest, "color":get_random_color()},
+        "highest":{"value":highest, "color":get_random_color()},
+        "love_days":{"value":get_count(), "color":get_random_color()},
+        "birthday_left":{"value":get_birthday(), "color":get_random_color()},
+        "words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
