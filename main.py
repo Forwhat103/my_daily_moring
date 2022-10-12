@@ -91,7 +91,7 @@ data = {"date":{"value":today1, "color":get_random_color()},
         "highest":{"value":highest, "color":get_random_color()},
         "love_days":{"value":get_count(), "color":get_random_color()},
         "birthday_left":{"value":get_birthday(), "color":get_random_color()},
-        "words":{"value":get_words(), "color":get_random_color()}
+        "words":{"value":get_words(), "color":get_random_color()}}
 
 #        "week_day_icon":{"value":emoji.emojize(':calendar:')},
 #        "city_icon":{"value":emoji.emojize(':city_sunset:')},
