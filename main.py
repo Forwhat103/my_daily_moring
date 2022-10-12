@@ -5,7 +5,7 @@ from wechatpy.client.api import WeChatMessage, WeChatTemplate
 import requests
 import os
 import random
-import emoji
+#import emoji
 
 today = datetime.now()
 
@@ -91,18 +91,18 @@ data = {"date":{"value":today1, "color":get_random_color()},
         "highest":{"value":highest, "color":get_random_color()},
         "love_days":{"value":get_count(), "color":get_random_color()},
         "birthday_left":{"value":get_birthday(), "color":get_random_color()},
-        "words":{"value":get_words(), "color":get_random_color()},
+        "words":{"value":get_words(), "color":get_random_color()}
 
-        "week_day_icon":{"value":emoji.emojize(':calendar:')},
-        "city_icon":{"value":emoji.emojize(':city_sunset:')},
-        "notice_icon":{"value":emoji.emojize(':clipboard:')},
-        "weather_icon":{"value":emoji.emojize(':sunny:')},
-        "wind_icon":{"value":emoji.emojize(':cyclone:')},
-        "temperature_icon":{"value":emoji.emojize(':hotsprings:')},
-        "lowest_icon":{"value":emoji.emojize(':snowflake:')},
-        "highest_icon":{"value":emoji.emojize(':fire:')},
-        "love_days_icon":{"value":emoji.emojize(':couplekiss:')},
-        "birthday_left_icon":{"value":emoji.emojize(':birthday:')}}
+#        "week_day_icon":{"value":emoji.emojize(':calendar:')},
+#        "city_icon":{"value":emoji.emojize(':city_sunset:')},
+#        "notice_icon":{"value":emoji.emojize(':clipboard:')},
+#        "weather_icon":{"value":emoji.emojize(':sunny:')},
+#        "wind_icon":{"value":emoji.emojize(':cyclone:')},
+#        "temperature_icon":{"value":emoji.emojize(':hotsprings:')},
+#        "lowest_icon":{"value":emoji.emojize(':snowflake:')},
+#        "highest_icon":{"value":emoji.emojize(':fire:')},
+#        "love_days_icon":{"value":emoji.emojize(':couplekiss:')},
+#        "birthday_left_icon":{"value":emoji.emojize(':birthday:')}}
 
 user_id_list = user_id.split(',')
 for i in range(len(user_id_list)):
