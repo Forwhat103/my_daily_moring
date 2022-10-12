@@ -36,10 +36,9 @@ def get_weather():
   citys = res['cityInfo']
   weather = res['data']['forecast']
   humidity = res['data']['shidu']
-  air_data = res['data']['aqi']
   air_quality = res['data']['quality']
   temperature = res['data']['wendu'] + "℃"
-  return humidity, wind, air_data, air_quality, temperature, weather, citys
+  return humidity, wind, air_quality, temperature, weather, citys
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -66,14 +65,13 @@ wm = WeChatMessage(client)
 
 
 weather_list, city_list = get_weather()
-# 划分天气信息
 print(weather_list)
 weather = weather_list[0]['type']
 highest = weather_list[0]['high']
 lowest = weather_list[0]['low']
 notice = weather_list[0]['notice']
 wind = weather_list[0]['fx'] + " " + weather_list[0]['fl']
-# 划分城市
+air_data = weather_list[0]['aqi']
 parent = city_list['parent']
 citys = city_list['city']
 
