@@ -20,9 +20,8 @@ birthday = os.environ['BIRTHDAY']
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
-user_id = [os.environ["USER_ID"]]
+user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
-
 
 #def get_weather():
 #  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
@@ -93,6 +92,7 @@ data = {"date":{"value":today1, "color":get_random_color()},
         "birthday_left":{"value":get_birthday(), "color":get_random_color()},
         "words":{"value":get_words(), "color":get_random_color()}}
 
-for i in range(len(user_id)):
-  res = wm.send_template(user_id[i], template_id, data)
+user_id_list = user_id.split(',')
+for i in range(len(user_id_list)):
   print(res)
+  res = wm.send_template(user_id_list[i], template_id, data)
