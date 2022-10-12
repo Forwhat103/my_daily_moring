@@ -94,5 +94,5 @@ data = {"date":{"value":today1, "color":get_random_color()},
 
 user_id_list = user_id.split(',')
 for i in range(len(user_id_list)):
-  print(res)
   res = wm.send_template(user_id_list[i], template_id, data)
+  print(res)
