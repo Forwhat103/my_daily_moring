@@ -124,7 +124,7 @@ data = {"date":{"value":today1},
         "love_day":{"value":start_date},
         "marry_day":{"value":marry_date},
         "w_birthday_left":{"value":get_wbirthday()},
-        "w_birthday_left":{"value":get_mbirthday()},
+        "m_birthday_left":{"value":get_mbirthday()},
         "words":{"value":get_words()}}
 
 #        "week_day_icon":{"value":emoji.emojize(':calendar:')},
