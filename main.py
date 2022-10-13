@@ -16,7 +16,9 @@ week_day = weekStr[pos:pos+3]
 today1 = datetime.strftime(today,'%Y年%m月%d日')
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
-birthday = os.environ['BIRTHDAY']
+wbirthday = os.environ['WBIRTHDAY']
+mbirthday = os.environ['MBIRTHDAY']
+marry_date = os.environ['MARRY_DATE']
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
@@ -40,12 +42,22 @@ def get_weather():
   temperature = res['data']['wendu'] + "℃"
   return humidity, air_quality, temperature, weather, citys
 
-def get_count():
+def get_love_days_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
   return delta.days
 
-def get_birthday():
-  next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
+def get_marry_day_count():
+  delta = today - datetime.strptime(marry_date, "%Y-%m-%d")
+  return delta.days
+
+def get_wbirthday():
+  next = datetime.strptime(str(date.today().year) + "-" + wbirthday, "%Y-%m-%d")
+  if next < datetime.now():
+    next = next.replace(year=next.year + 1)
+  return (next - today).days
+
+def get_mbirthday():
+  next = datetime.strptime(str(date.today().year) + "-" + mbirthday, "%Y-%m-%d")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
   return (next - today).days
@@ -107,8 +119,12 @@ data = {"date":{"value":today1},
         "temperature":{"value":temperature},
         "lowest":{"value":lowest},
         "highest":{"value":highest},
-        "love_days":{"value":get_count()},
-        "birthday_left":{"value":get_birthday()},
+        "love_days":{"value":get_love_days_count()},
+        "marry_days":{"value":get_marry_day_count()},
+        "love_day":{"value":start_date},
+        "marry_day":{"value":marry_date},
+        "w_birthday_left":{"value":get_wbirthday()},
+        "w_birthday_left":{"value":get_mbirthday()},
         "words":{"value":get_words()}}
 
 #        "week_day_icon":{"value":emoji.emojize(':calendar:')},
